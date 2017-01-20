@@ -51,7 +51,7 @@ var DEFAULTS = {
   guides: true,
 
   // Show the center indicator for guiding
-  center: true,
+  center: false,
 
   // Show the white modal to highlight the crop box
   highlight: true,
