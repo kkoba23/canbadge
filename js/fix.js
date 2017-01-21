@@ -18,8 +18,6 @@ function fileUpload(){
 	      upload(file);
 
 	  });
-	  alert("!");
-
 	  //ドラッグ＆ドロップの実装
 	  $('.dragArea').on('drop', function(e){
 	    e.preventDefault();
