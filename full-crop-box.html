@@ -7,6 +7,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Cropper</title>
 <link rel="stylesheet" href="css/cropper.css">
+<link rel="stylesheet" href="css/fix.css">
 <style>
 .container {
 	user-select: none;
@@ -33,24 +34,6 @@ img {
 	position: center;
 }
 
-.btn-upload {
-	top: -330px;
-}
-
-.docs-tooltip {
-	display: block;
-	margin: -.5rem -.75rem;
-	padding: .5rem .75rem;
-}
-
-.docs-tooltip>.icon {
-	margin: 0 -.25rem;
-	vertical-align: top;
-}
-
-.btn-upload .tooltip-inner, .btn-toggle .tooltip-inner {
-	white-space: nowrap;
-}
 
 .cropper-view-box, .cropper-face {
 	border-radius: 50%;
@@ -61,16 +44,21 @@ img {
 
 	<div class="container">
 		<h1>缶バッチ アプリ</h1>
-		<input type="file" class="avatar-input" id="avatarInput"
-			name="avatar_file">
+		<span class="fileupImg">画像をアップロード</span>
+		<!-- 		 <input type="file"accept='image/*' name="img"> -->
+		<!-- 		 <input type="file" class="avatar-input" id="avatarInput" name="avatar_file"> -->
+		<input type="file" class="avatar-input" id="avatarInput" name="img">
 		<div>
-			<img id="image" src="img/figure_2017.jpg" alt="Picture">
+				<img id="image" src="img/figure_2017.jpg" class="thumb" alt="Picture" />
+
+<!-- 			<img id="image" src="img/figure_2017.jpg" class="thumb" alt="Picture"> -->
 		</div>
+
 		<div class="circle-guide"></div>
 	</div>
-
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<script type="text/javascript" src="js/fix.js"></script>
 	<script>
 		$(function() {
 			$('#image').cropper({

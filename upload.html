@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=utf-8" />
+<title>File Apiを使ってアップロードした画像を表示させる</title>
+<meta name="description" content="" />
+<meta name="keywords" content="*,*" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+<link type="text/css" href="css/fix.css" rel="stylesheet" media="all" />
+<link type="text/css" href="css/font-awesome.css" rel="stylesheet" media="all" />
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script type="text/javascript" src="js/fix.js"></script>
+
+</head>
+
+<body class="DIRNAME" id="FILENAME">
+<div id="wrapper">
+  <hgroup>
+		<h1>DEMO</h1>
+		<h2>File Apiを使ってアップロードした画像を表示させる</h2>
+	</hgroup>
+  <div class="contents">
+  <form action="" method="post" enctype="multipart/form-data">
+      <div class="fileUpload">
+        <div class="dragArea">ここにファイルをドロップ</div>
+        <span class="fileupImg">画像をアップロード</span>
+        <input type="file" accept='image/*' name="img">
+        <div>
+          <img src="" class="thumb" alt="" />
+        </div>
+        <div class="fileInfo"></div>
+      </div>
+    </form>
+  </div>
+
+
+
+	<div id="footer">
+
+	<!-- /#footer --></div>
+</body>
+</html>
