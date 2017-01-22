@@ -12,7 +12,8 @@ $('#cropBtn').on('click', function () {
     });
     var cropURI = cropImg.toDataURL("image/jpeg");
     $('#cropBtn a').attr('href',cropURI);
-    $('#cropImg').attr('src',cropURI);
+//    $('#cropImg').attr('src',cropURI);
+    $('#cropImg').html(cropImg);
 });
 
 
