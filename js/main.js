@@ -21,7 +21,7 @@ function fileUpload() {
 
 	$('.filedownImg').on('click', function () {
 	    var cropImg = $('#image').cropper('getCroppedCanvas', {
-	        width: 350,height: 350,
+	        width: 700,height: 700,
 	    });
 	    var cropURI = cropImg.toDataURL("image/jpeg");
 	    $('#cropBtn a').attr('href',cropURI);
