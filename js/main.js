@@ -5,20 +5,27 @@ $(function() {
 
 
 });
-$('#cropBtn').on('click', function () {
-    var cropImg = $('#image').cropper('getCroppedCanvas', {
-        width: 200,
-        height: 200,
-    });
-    var cropURI = cropImg.toDataURL("image/jpeg");
-    $('#cropBtn a').attr('href',cropURI);
-//    $('#cropImg').attr('src',cropURI);
-    $('#cropImg').html(cropImg);
-});
+//$('#cropBtn').on('click', function () {
+//    var cropImg = $('#image').cropper('getCroppedCanvas', {
+//        width: 350,
+//        height: 350,
+//    });
+//    var cropURI = cropImg.toDataURL("image/jpeg");
+//    $('#cropBtn a').attr('href',cropURI);
+////    $('#cropImg').attr('src',cropURI);
+//    $('#cropImg').html(cropImg);
+//});
 
 
 function fileUpload() {
 
+	$('.filedownImg').on('click', function () {
+	    var cropImg = $('#image').cropper('getCroppedCanvas', {
+	        width: 350,height: 350,
+	    });
+	    var cropURI = cropImg.toDataURL("image/jpeg");
+	    $('#cropBtn a').attr('href',cropURI);
+	});
 
 
 	$(".fileupImg").on("click", function(event) {
@@ -57,16 +64,7 @@ function fileUpload() {
 		var $img = $(".thumb"), $downfile = $(".filedownImg")
 		fileReader = new FileReader();
 		fileReader.onload = function(event) {
-			// $img.attr('src', event.target.result);
 			$img.cropper('replace', event.target.result);
-			// $downfile.attr('href',
-			// $img.cropper('getCroppedCanvas').toDataURL('image/png'));
-			var cropImg = $img.cropper('getCroppedCanvas')
-					.toDataURL();
-//			$img_canvas.attr('src', cropImg);
-			//
-			 $downfile.attr('href', cropImg);
-			// console.log( event.target.toDataURL('image/jpeg'));
 		};
 		fileReader.readAsDataURL(file);
 	}
