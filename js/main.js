@@ -70,6 +70,7 @@ $(function() {
 				canbadge3Dinit(cropURI);
 			} else {
 				canbadgeLoader(cropURI);
+				positionInit();
 			}
 			status=0;
 //			$('#cropBtn a').attr('href', cropURI);
