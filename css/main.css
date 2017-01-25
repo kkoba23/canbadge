@@ -5,6 +5,7 @@ body {
 	width: 100%;
 	background: #0af;
 	color: #fefefe;
+	overflow-x:hidden
 }
 
 .btn {
