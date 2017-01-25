@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,73 +7,58 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Canbadge</title>
 <link rel="stylesheet" href="css/cropper.css">
-<link rel="stylesheet" href="css/upload.css">
-<style>
-.container {
-	user-select: none;
-	width: 360px;
-	/* 	height: auto; */
-	margin: 0px auto;
-}
-
-.circle-guide {
-	pointer-events: none;
-	width: 300px;
-	height: 300px;
-	border-radius: 50%;
-	border: 2px dashed white;
-	position: relative;
-	top: -330px;
-	left: 30px;
-}
-
-img {
-	overflow: hidden;
-	width: 360px; /* トリミングしたい枠の幅 */
-	height: 360px; /* トリミングしたい枠の高さ */
-	position: center;
-}
-
-.cropper-view-box, .cropper-face {
-	border-radius: 50%;
-}
-</style>
+<link rel="stylesheet" href="css/main.css">
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script>
-	$(function() {
-		$('#image').cropper({
-			viewMode : 3,
-			aspectRatio : 1,
-			dragMode : 'move',
-			autoCropArea : 1,
-			restore : true,
-			modal : true,
-			guides : false,
-			highlight : true,
-			cropBoxMovable : false,
-			cropBoxResizable : false
-		});
-	});
-</script>
-
-
-
+<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-
 	<div class="container">
-		<h1>缶バッチ アプリ</h1>
-		<span class="fileupImg">画像をアップロード</span>
-		<input type="file" class="avatar-input" id="avatarInput" name="img">
-		<div>
-			<img id="image" src="" class="thumb" alt="画像をアップロードしてください" />
+		<p align="left">缶バッチ作成用トリミングアプリ</p>
+		<div align="center">
+			<span class="fileupImg btn">画像をアップロード</span> <input type="file"
+				class="avatar-input" id="avatarInput" name="img">
 		</div>
-		<div class="circle-guide"></div>
-		<span id="cropBtn"><a class="filedownImg" href="#">決定</a></span>
-<!-- 		<a href="#">ダウンロード</a> -->
+		<div class="rect">
+			<div>
+				<img id="image" src="" class="thumb" alt="" />
+			</div>
+			<div class="dragArea">
+				<div class="vertical_middle">
+					<p>ここにファイルをドロップ</p>
+				</div>
+			</div>
+			<div>
+				<img class="hyoji" />
+			</div>
+			<div class="circle-guide"></div>
+		</div>
+		<br>
+		<div>
+			<div style="float: left">
+				<span id="dropBtn" class="btn">ここにドロップ</span>
+			</div>
+			<div style="float: right">
+				<span id="cropBtn"><a class="filedownImg btn" href="#">決定</a></span>
+			</div>
+		</div>
 	</div>
 	<script src="js/cropper.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		$(function() {
+			$('#image').cropper({
+				viewMode : 3,
+				aspectRatio : 1,
+				dragMode : 'move',
+				autoCropArea : 1,
+				restore : true,
+				modal : true,
+				guides : false,
+				highlight : true,
+				cropBoxMovable : false,
+				cropBoxResizable : false
+			});
+		});
+	</script>
 
 </body>
 </html>

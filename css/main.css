@@ -1,0 +1,130 @@
+body {
+	width: 100%;
+	background: #0af;
+	color: #fefefe;
+}
+
+.btn {
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+	padding: 8px 16px;
+	border-style: solid;
+	border-width: 1px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	font-size: 13px;
+	right: 10px;
+}
+
+input[type=file] {
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+}
+
+#dropBtn{
+	border: 2px dashed #eee;
+	display: none;
+/* 	visibility:hidden; */
+}
+.fileupImg, .filedownImg {
+
+}
+
+.filedownImg {
+	position: relative;
+	right: 0px;
+}
+
+.container {
+	position: relative;
+	user-select: none;
+	width: 360px;
+	margin: 0px auto;
+	user-select: none;
+}
+
+img {
+	overflow: hidden;
+	width: 360px; /* トリミングしたい枠の幅 */
+	height: 360px; /* トリミングしたい枠の高さ */
+	overflow: hidden;;
+}
+
+.hyoji{
+	visibility:hidden;
+	position: absolute;
+	margin:auto;
+	top:0px;
+	left:0px;
+	border-radius:50%;
+box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset;
+-moz-box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset;
+-webkit-box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset;
+/* 	border:solid yellow 5px; */
+}
+
+.rect {
+	position: relative;
+	width: 360px;
+	height: 360px;
+}
+
+.circle-guide {
+	pointer-events: none;
+	position: absolute;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border: 2px dashed white;
+	top: 30px;
+	left: 30px;
+}
+
+.dragArea {
+	display: inline;
+	width: 356px; /* トリミングしたい枠の幅 */
+	height: 356px; /* トリミングしたい枠の高さ */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border: 2px dashed #eee;
+	text-align: center;
+}
+
+.vertical_middle {
+	position: relative;
+	top: 150px;
+	left: auto;
+}
+
+.dragArea.over {
+	border: 2px dashed #eee;
+	left: 0px;
+	top: 0px;
+}
+
+.dragArea.dropped {
+	pointer-events: none;
+	border: none;
+}
+
+@media screen and (max-width: 480px) {
+	/* 表示領域が800px以上の場合に適用するスタイル */
+	.dragArea {
+		visibility: hidden
+	}
+	#dropBtn {
+		visibility: hidden
+	}
+	.cotion_text {
+		display: none
+	}
+}
+
+.cropper-view-box, .cropper-face {
+	border-radius: 50%;
+}
