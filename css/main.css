@@ -6,7 +6,8 @@
 body {
 	font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 	width: 100%;
-	background: #0af;
+	margin: 0px;
+ 	background: #0af;
 	color: #fefefe;
 	overflow-x:hidden
 }
@@ -75,7 +76,6 @@ box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset
 .rect {
 	position: relative;
 	width: 360px;
-	height: 360px;
 }
 
 .circle-guide {
