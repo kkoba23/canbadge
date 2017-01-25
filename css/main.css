@@ -50,7 +50,6 @@ input[type=file] {
 }
 
 img {
-	overflow: hidden;
 	width: 360px; /* トリミングしたい枠の幅 */
 	height: 360px; /* トリミングしたい枠の高さ */
 	overflow: hidden;;
