@@ -9,7 +9,20 @@
 <link rel="stylesheet" href="css/cropper.css">
 <link rel="stylesheet" href="css/main.css">
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/MTLLoader.js"></script>
+<script src="js/OBJLoader.js"></script>
+<script src="js/main.js"></script>
+<style>
+#viewArea{
+	visibility:hidden;
+	width: 360px;
+	height: 360px;
+	position: absolute;
+	top:0px;
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -31,6 +44,7 @@
 				<img class="hyoji" />
 			</div>
 			<div class="circle-guide"></div>
+			<div id="viewArea"></div>
 		</div>
 		<br>
 		<div>
@@ -59,6 +73,6 @@
 			});
 		});
 	</script>
-
+ 	<script src="js/3D_main.js"></script>
 </body>
 </html>

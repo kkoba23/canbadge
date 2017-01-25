@@ -1,5 +1,5 @@
 $(function() {
-	var status=0;
+	var status=1;
 	// ドラッグ＆ドロップの実装
 	$('.dragArea').on('drop', function(e) {
 		e.preventDefault();
@@ -52,29 +52,36 @@ $(function() {
 
 	// 決定ボタン
 	$('.filedownImg').on('click', function() {
-		if(status==0){
+		if(status>0){
 			var cropImg = $('#image').cropper('getCroppedCanvas', {
 				width : 700,
 				height : 700,
 			});
 			$('.hyoji').attr('src', cropImg.toDataURL());
-			$('.hyoji').css({visibility:'visible'});
+			$('#viewArea').css({visibility:'visible'});
 			$('body').css({background:'#2df'});
 			$('.cropper-bg').css({visibility:'hidden'});
+			$('.circle-guide').css({visibility:'hidden'});
 			$('.fileupImg').css({visibility:'hidden'});
 			$('#dropBtn').css({visibility:'hidden'});
 			$('.filedownImg').html('やり直す');
-			status=1;
-//			var cropURI = cropImg.toDataURL("image/jpeg");
+			var cropURI = cropImg.toDataURL("image/jpeg");
+			if(status==1){
+				canbadge3Dinit(cropURI);
+			} else {
+				canbadgeLoader(cropURI);
+			}
+			status=0;
 //			$('#cropBtn a').attr('href', cropURI);
 		} else {
-			status=0;
 			$('body').css({background:'#0af'});
 			$('#dropBtn').css({visibility:'visible'});
 			$('.fileupImg').css({visibility:'visible'});
 			$('.cropper-bg').css({visibility:'visible'});
-			$('.hyoji').css({visibility:'hidden'});
+			$('.circle-guide').css({visibility:'visible'});
+			$('#viewArea').css({visibility:'hidden'});
 			$('.filedownImg').html('決定');
+			status=2;
 		}
 	});
 
