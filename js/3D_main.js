@@ -19,6 +19,7 @@ var canbadge3Dinit = function(canTexture) {
 
 	// マウスコントロール
 	var controls = new THREE.OrbitControls(camera);
+	controls.enableZoom = false;
 
 	// ライト
 	var directionalLight1 = new THREE.DirectionalLight('#aaaaaa', 1);

@@ -1,5 +1,6 @@
 $(function() {
 	var status=1;
+	var cropURI;
 	// ドラッグ＆ドロップの実装
 	$('.dragArea').on('drop', function(e) {
 		e.preventDefault();
@@ -43,11 +44,17 @@ $(function() {
 	$(".fileupImg").on("click", function(event) {
 		$("input[name=img]").trigger("click");
 	});
+	// メールで注文する
+	$("#mailBtn").on("click", function(event) {
+		$('#mailLink').attr('href', cropURI);
+//		console.log($('#mailBtn a'));
+//		$('#mailBtn a').trigger("click");
+	});
 	// ドラッグエリアの表示/非表示
 	$(".fileupImg").on('mouseover', function() {
 		$('.dragArea').css({ display:'none'});
 	}).on('mouseleave', function(){
-		$('.dragArea').css({ display:'inline'});
+		$('.dragArea').css({ display:'inline-block'});
 	});
 
 	// 決定ボタン
@@ -64,8 +71,9 @@ $(function() {
 			$('.circle-guide').css({visibility:'hidden'});
 			$('.fileupImg').css({visibility:'hidden'});
 			$('#dropBtn').css({visibility:'hidden'});
+			$('#mailBtn').css({display:'inline-block'});
 			$('.filedownImg').html('やり直す');
-			var cropURI = cropImg.toDataURL("image/jpeg");
+			cropURI = cropImg.toDataURL("image/jpeg");
 			if(status==1){
 				canbadge3Dinit(cropURI);
 			} else {
@@ -80,6 +88,7 @@ $(function() {
 			$('.fileupImg').css({visibility:'visible'});
 			$('.cropper-bg').css({visibility:'visible'});
 			$('.circle-guide').css({visibility:'visible'});
+			$('#mailBtn').css({display:'none'});
 			$('#viewArea').css({visibility:'hidden'});
 			$('.filedownImg').html('決定');
 			status=2;

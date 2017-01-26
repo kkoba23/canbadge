@@ -15,12 +15,12 @@
 <script src="js/OBJLoader.js"></script>
 <script src="js/main.js"></script>
 <style>
-#viewArea{
-	visibility:hidden;
+#viewArea {
+	visibility: hidden;
 	width: 340px;
 	height: 340px;
 	position: absolute;
-	top:0px;
+	top: 0px;
 }
 </style>
 </head>
@@ -28,8 +28,8 @@
 	<div class="container">
 		<p align="left">缶バッチ作成用トリミングアプリ</p>
 		<div align="center">
-			<span class="fileupImg btn">画像をアップロード</span> <input type="file"
-				class="avatar-input" id="avatarInput" name="img">
+			<span class="fileupImg btn">画像を選択</span>
+			<input type="file" class="avatar-input" id="avatarInput" name="img">
 		</div>
 		<div class="rect">
 			<div>
@@ -50,6 +50,13 @@
 		<div>
 			<div style="float: left">
 				<span id="dropBtn" class="btn">ここにドロップ</span>
+			</div>
+			<div style="float: left">
+				<span id="mailBtn"><a class="btn" id="mailLink" href="mailto:info@k-relations.com?subject=缶バッチ注文&amp;body=本文" name='mail'>画像を表示</a></span>
+<!-- 				<form> -->
+<!-- 					<input type="button" value="メールで注文する" -->
+<!-- 						onclick="location.href='mailto:info@k-relations.com?subject=缶バッチ注文&amp;body=本文'" name="mail"> -->
+<!-- 				</form> -->
 			</div>
 			<div style="float: right">
 				<span id="cropBtn"><a class="filedownImg btn" href="#">決定</a></span>
@@ -73,6 +80,6 @@
 			});
 		});
 	</script>
- 	<script src="js/3D_main.js"></script>
+	<script src="js/3D_main.js"></script>
 </body>
 </html>

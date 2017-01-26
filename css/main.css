@@ -31,12 +31,22 @@ input[type=file] {
 	visibility: hidden;
 	height: 0;
 }
+input[type=button] {
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+}
 
 #dropBtn{
 	border: 2px dashed #eee;
 	display: none;
 /* 	visibility:hidden; */
 }
+
+#mailBtn{
+	display:none;
+}
+
 .fileupImg, .filedownImg {
 
 }
