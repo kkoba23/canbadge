@@ -103,7 +103,7 @@ var canbadgeLoader = function(canTexture) {
 	// Function when resource is loaded
 	function(object, materials) {
 		var texloader = new THREE.TextureLoader();
-		var imagepath = "img/S__4210708.jpg";
+//		var imagepath = "img/S__4210708.jpg";
 		var tex = texloader.load(canTexture);
 		var material = new THREE.MeshPhongMaterial({
 			color : 0xaaaaaa,

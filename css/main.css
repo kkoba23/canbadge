@@ -37,38 +37,84 @@ input[type=button] {
 	height: 0;
 }
 
+.nickname{
+position: absolute;
+	top:150px;
+	left:50px;
+	z-index:1;
+	visibility: hidden;
+}
+.nickname input{
+	font-size: 18px
+}
+
 #dropBtn{
 	border: 2px dashed #eee;
 	display: none;
 /* 	visibility:hidden; */
 }
 
-#mailBtn{
-	display:none;
+/* .undo{ */
+/* 	display:inline-block; */
+/* 	visibility: hidden; */
+/* 	top:-30px; */
+/* } */
+
+.undo{
+	position:relative;
+	top:-38px;
+	left:10px;
+	visibility: hidden;
 }
 
-.fileupImg, .filedownImg {
-
+.fileupImg {
+	position: absolute;
+	display: inline-block;
+	margin:auto;
+	top:100px;
+	left:110px;
+	z-index:1;
+	visibility: hidden;
 }
 
-.filedownImg {
+.fileupImg span{
 	position: relative;
-	right: 0px;
+	top:-35px;
+	left:-15px;
+}
+
+.filedownImg{
+	position: relative;
+/* 	left: 50px; */
+ 	top: -40px;
+	visibility: hidden;
+}
+
+#mailLink {
+	position: relative;
+	left: -10px;
+	top: -40px;
+	visibility: hidden;
 }
 
 .container {
 	position: relative;
-	user-select: none;
+/* 	user-select: none; */
 	width: 360px;
 	margin: 0px auto;
-	user-select: none;
+/* 	user-select: none; */
 }
 
-img {
+img .hyoji, #image{
 	width: 360px; /* トリミングしたい枠の幅 */
 	height: 360px; /* トリミングしたい枠の高さ */
-	overflow: hidden;;
+	overflow: hidden;
 }
+
+/* .kazari { */
+/* 	-webkit-transform: translate3d(100%, -50%, 0); */
+/*           transform: translate3d(250px, -50px, 0); */
+/* } */
 
 .hyoji{
 	visibility:hidden;
@@ -86,18 +132,19 @@ box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset
 .rect {
 	position: relative;
 	width: 360px;
+	top: -20px;
 }
 
 .circle-guide {
 	pointer-events: none;
 	position: absolute;
 	margin: auto;
-	width: 300px;
-	height: 300px;
+	width: 280px;
+	height: 280px;
 	border-radius: 50%;
 	border: 2px dashed white;
-	top: 30px;
-	left: 30px;
+	top: 40px;
+	left: 40px;
 }
 
 .dragArea {
@@ -130,6 +177,8 @@ box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset
 	border: none;
 }
 
+
+
 @media screen and (max-width: 480px) {
 	/* 表示領域が800px以上の場合に適用するスタイル */
 	.dragArea {
@@ -140,6 +189,9 @@ box-shadow:-22px -20px 15px -7px #c2c2c2 inset,1px -1px 34px -11px #6e6e6e inset
 	}
 	.cotion_text {
 		display: none
+	}
+	.fileupImg {
+	visibility: visible
 	}
 }
 

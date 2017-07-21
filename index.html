@@ -8,7 +8,7 @@
 <title>Canbadge</title>
 <link rel="stylesheet" href="css/cropper.css">
 <link rel="stylesheet" href="css/main.css">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/three.min.js"></script>
 <script src="js/OrbitControls.js"></script>
 <script src="js/MTLLoader.js"></script>
@@ -26,10 +26,8 @@
 </head>
 <body>
 	<div class="container">
-		<p align="left">缶バッチ作成用トリミングアプリ</p>
-		<div align="center">
-			<span class="fileupImg btn" >　画像を選択　</span>
-			<input type="file" class="avatar-input" id="avatarInput" name="img">
+		<div class="kazari" align="center">
+			<img src='img/group.png' height="80px" 　width="auto">
 		</div>
 		<div class="rect">
 			<div>
@@ -43,21 +41,39 @@
 			<div>
 				<img class="hyoji" />
 			</div>
+			<div class="fileupImg">
+				<img width="150px" src="img/icon_111970.svg"> <span
+					textalign="center"><h5>写真を撮るか画像を選んでね</h5></span>
+			</div>
 			<div class="circle-guide"></div>
 			<div id="viewArea"></div>
+
 		</div>
 		<br>
 		<div>
+
 			<div style="float: left">
 				<span id="dropBtn" class="btn">ここにドロップ</span>
 			</div>
+			<div style='float: right'>
+				<span class="btn" id="mailLink">保存</span>
+			</div>
 			<div style="float: left">
-				<span id="mailBtn"><a class="btn" id="mailLink" href="#">画像を表示</a></span>
+				<span class="undo btn">画像を選び直す</span>
 			</div>
 			<div style="float: right">
-				<span id="cropBtn"><a class="filedownImg btn" href="#">決定</a></span>
+				<span class="filedownImg btn">決定</span>
 			</div>
 		</div>
+		<div class='nickname'>
+				名前を入れてね
+				<form>
+					<input type="text" class='nickname_text'> <span
+						class="nickname_btn btn">送信</span>
+				</form>
+			</div>
+
+		<input type="file" class="avatar-input" id="avatarInput" name="img">
 	</div>
 	<script src="js/cropper.js"></script>
 	<script>
