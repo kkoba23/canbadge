@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Canbadge</title>
+<!-- <link rel="stylesheet" href="css/cropper.css"> -->
+<link rel="stylesheet" href="css/main.css">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/MTLLoader.js"></script>
+<script src="js/OBJLoader.js"></script>
+<script src="js/main.js"></script>
+<style>
+#viewArea {
+	visibility: hidden;
+	width: 340px;
+	height: 340px;
+	position: absolute;
+	top: 0px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<p align="left">缶バッチサンプル</p>
+		<div align="center">
+			<span class="fileupImg btn"> 画像を選択 </span> <input type="file"
+				class="avatar-input" id="avatarInput" name="img">
+		</div>
+		<div class="rect">
+<!-- 			<div> -->
+<!-- 				<img id="image" src="" class="thumb" alt="" /> -->
+<!-- 			</div> -->
+<!-- 			<div class="dragArea"> -->
+<!-- 				<div class="vertical_middle"> -->
+<!-- 					<p>ここにファイルをドロップ</p> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div> -->
+<!-- 				<img class="hyoji" /> -->
+<!-- 			</div> -->
+<!-- 			<div class="circle-guide"></div> -->
+			<div id="viewArea"></div>
+		</div>
+		<!-- 		<br> -->
+		<!-- 		<div> -->
+		<!-- 			<div style="float: left"> -->
+		<!-- 				<span id="dropBtn" class="btn">ここにドロップ</span> -->
+		<!-- 			</div> -->
+		<!-- 			<div style="float: left"> -->
+		<!-- 				<span id="mailBtn"><a class="btn" id="mailLink" href="#">画像を表示</a></span> -->
+		<!-- 			</div> -->
+		<!-- 			<div style="float: right"> -->
+		<!-- 				<span id="cropBtn"><a class="filedownImg btn" href="#">決定</a></span> -->
+		<!-- 			</div> -->
+		<!-- 		</div> -->
+	</div>
+	<!-- 	<script src="js/cropper.js"></script> -->
+	<!-- 	<script> -->
+	<!-- // 		$(function() { -->
+	<!-- // 			$('#image').cropper({ -->
+	<!-- // 				viewMode : 3, -->
+	<!-- // 				aspectRatio : 1, -->
+	<!-- // 				dragMode : 'move', -->
+	<!-- // 				autoCropArea : 1, -->
+	<!-- // 				restore : true, -->
+	<!-- // 				modal : true, -->
+	<!-- // 				guides : false, -->
+	<!-- // 				highlight : true, -->
+	<!-- // 				cropBoxMovable : false, -->
+	<!-- // 				cropBoxResizable : false -->
+	<!-- // 			}); -->
+	<!-- // 		}); -->
+	<!-- 	</script> -->
+	<script src="js/3D_main.js"></script>
+	<script>
+		$(function() {
+			var status=1;
+			var cropURI='img/figure_2017.jpg';
+// 			var cropImg = $('#image').cropper('getCroppedCanvas', {
+// 				width : 700,
+// 				height : 700,
+// 			});
+// 			$('.hyoji').attr('src', cropImg.toDataURL());
+			$('#viewArea').css({visibility:'visible'});
+			$('body').css({background:'#2df'});
+			$('.cropper-bg').css({visibility:'hidden'});
+			$('.circle-guide').css({visibility:'hidden'});
+			$('.fileupImg').css({visibility:'hidden'});
+			$('#dropBtn').css({visibility:'hidden'});
+			$('#mailBtn').css({display:'inline-block'});
+			$('.filedownImg').html('やり直す');
+// 			cropURI = cropImg.toDataURL("image/jpeg");
+			if(status==1){
+				canbadge3Dinit(cropURI);
+			} else {
+				canbadgeLoader(cropURI);
+				positionInit();
+			}
+		})
+	</script>
+</body>
+</html>
